@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import data from './data';
+import { FaAngleDoubleRight } from 'react-icons/fa'
 
 function App() {
+  const [jobs, setJobs] = useState(data);
+  const [value, setValue] = useState(0);
+  const { dates, company, duties, title } = jobs[value];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="section">
+      <div className="title">
+        <h1 className="heading">Experience</h1>
+        <div className="underline"></div>
+      </div>
+      <div className="job-center">
+        <div className="btn-container">
+          {
+            jobs.map((job, index) => {
+              return (
+                <button key={job.id}
+                  onClick={() => setValue(index)}
+                  className={`job-btn ${index === value && 'active-btn'}`}>
+                  {job.company}
+                </button>
+              )
+            })
+          }
+        </div>
+        <article className="job-info">
+          <h2>{title}</h2>
+          <h4>{company}</h4>
+          <p>{dates}</p>
+          {
+            duties.map((duty, index) => {
+              return (
+                <div key={index} className="job-desc">
+                  <FaAngleDoubleRight />
+                  <p>{duty}</p>
+                </div>
+              )
+            })
+          }
+        </article>
+      </div>
+    </section>
   );
 }
 

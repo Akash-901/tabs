@@ -5,9 +5,142 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(229, 247, 241);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.heading
+{
+  font-size: 2rem;
+}
+.section
+{
+  width: 80%;
+  margin: auto;
+}
+.title
+{
+  text-align: center;
+}
+.underline
+{
+  height: 0.2rem;
+  background-color: black;
+  width: 5%;
+  margin: auto;
+  margin-top: -2vh;
+}
+.job-center
+{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  gap: 4vw;
+  margin-top: 10vh;
+  text-align: justify;
+}
+
+.job-desc {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.btn-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 20vh;
+  justify-content: space-around;
+  margin-top: 2vh;
+}
+.job-btn
+{
+  background-color: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.active-btn
+{
+  color: teal;
+  border-left: 2px solid teal;
+}
+
+@media(max-width: 720px)
+{
+ .job-center
+ {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+ }
+ .btn-container
+ {
+   display: flex;
+   flex-direction: row;
+   text-align: center;
+   width: 70%;
+   margin: auto;
+   justify-content: space-around;
+   height: auto;
+ }
+ .job-btn
+ {
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+ }
+ .active-btn
+ {
+   border-bottom: 2px solid teal;
+   color: teal;
+ }
+ .underline
+ {
+   width: 20%;
+   margin-bottom: -3vh;
+ }
+}
+
+@media(max-width: 360px)
+{
+ .job-center
+ {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+ }
+ .btn-container
+ {
+   display: flex;
+   flex-direction: row;
+   text-align: center;
+   width: 70%;
+   margin: auto;
+   justify-content: space-around;
+   height: auto;
+ }
+ .job-btn
+ {
+   font-size: 1rem;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+ }
+ .active-btn
+ {
+   border-bottom: 2px solid teal;
+   color: teal;
+ }
+ .underline
+ {
+   width: 20%;
+   margin-bottom: -3vh;
+ }
 }
